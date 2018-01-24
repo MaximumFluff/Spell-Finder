@@ -67,6 +67,7 @@ body
     margin-top: 25px;
     font-size: 21px;
     text-align: center;
+    transition: background-color 3s;
 }
 
 @keyframes fadein {
