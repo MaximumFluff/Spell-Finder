@@ -7,9 +7,11 @@
 
 #root
 {
+    
     margin: 0;
     text-align: justify;
     border: 1px solid black;
+    box-sizing: border-box;
     margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
