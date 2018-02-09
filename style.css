@@ -5,13 +5,29 @@
     padding: 0;
 }
 
+body
+{
+    background-color: darkgray;
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    transition: background-color 3s;
+}
+
+button
+{
+    font-size: 19px;
+    margin-left: 50px;
+    width: 25%;
+}
+
 #root
 {
     margin: 0;
     text-align: justify;
     border: 1px solid black;
     box-sizing: border-box;
-    margin-top: 7%;
+    margin-top: 3%;
     margin-left: 10%;
     margin-right: 10%;
     width: 80%;
@@ -59,15 +75,6 @@ img
     {
         font-size: 10px;
     }
-}
-
-body
-{
-    background-color: darkgray;
-    margin-top: 25px;
-    font-size: 21px;
-    text-align: center;
-    transition: background-color 3s;
 }
 
 @keyframes fadein {

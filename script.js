@@ -1,39 +1,45 @@
 class DND extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {name: '', description: '', page: '', range: '', components: '', ritual: '', concentration: '', casting_time: '', level: ''};
+      this.state = {name: '', description: '', higher_level: '', page: '', range: '', components: '', ritual: '', concentration: '', casting_time: '', level: ''};
     }
     
-    getData = () =>
+    getValidation = () =>
     {
-        fetch('http://www.dnd5eapi.co/api/spells')
+        fetch('5e-SRD-Spells.json')
         .then((response) => response.json())
-        .then((responseData) => {
-            let nameOfSpell = document.getElementById('search').value;
-            console.log(responseData);
-            for (let i = 0; i < responseData.results.length; i++)
-            {
-                //console.log(i);
-                if (nameOfSpell == responseData.results[i].name)
-                {
-                    let spellId = i + 1;
-                    this.getSpecificSpell(spellId);
-                }
-            }
-        });
+        .then((responseData) =>
+        {
+            
+        })
     }
-
-    getSpecificSpell = (id) =>
+    
+    getSpecificSpell = () =>
     {
+        let id = $("#spell").val();
+        console.log(id);
         fetch('http://www.dnd5eapi.co/api/spells/' + id)
         .then((response) => response.json())
         .then((responseData) =>
         {
+            console.log(responseData);
             let componentsAll = '';
             for (let i = 0; i < responseData.components.length; i++)
             {
                 console.log(responseData.components[i]);
                 componentsAll += responseData.components[i];
+            }
+            if (responseData.higher_level === undefined)
+            {
+                this.setState({
+                    higher_level: "Does not scale to higher levels"
+                })       
+            }
+            else
+            {
+                this.setState({
+                    higher_level: responseData.higher_level[0]
+                })
             }
             this.setState({
                 name: responseData.name,
@@ -54,10 +60,13 @@ class DND extends React.Component {
             <div>
                 <img src="ampersand.png"></img>
                 <h1>Dungeons and Dragons 5th Edition Spell Finder</h1>
-                <input type="text" id="search" />
-                <button type="button" onClick={this.getData}>Search</button>
+                <div>
+                    <select id="spell" name="spell"></select>
+                    <button type="button" onClick={this.getSpecificSpell}>Search</button>
+                </div>
                 <div>Name: {this.state.name}</div>
                 <div>Description: {this.state.description}</div>
+                <div>At Higher Levels: {this.state.higher_level}</div>
                 <div>Page: {this.state.page}</div>
                 <div>Range: {this.state.range}</div>
                 <div>Components: {this.state.components}</div>
@@ -71,3 +80,4 @@ class DND extends React.Component {
 }
 
 ReactDOM.render(<DND />, document.getElementById('root'));
+//<input type="text" id="search" />
