@@ -1,4 +1,4 @@
-# Spell-Finder
+# D&D 5th Edition Spell Finder Web App
 
 ## Description
 Find details of spells for D&amp;D 5th Edition, listing details of the spell. Built to save myself from having to look through the core textbooks while running a game as a Dungeon Master.
