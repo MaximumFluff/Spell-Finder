@@ -59,7 +59,7 @@ class DND extends React.Component {
         return (
             <div>
                 <img src="ampersand.png"></img>
-                <h1>Dungeons and Dragons 5th Edition Spell Finder</h1>
+                
                 <div>
                     <select id="spell" name="spell"></select>
                     <button type="button" onClick={this.getSpecificSpell}>Search</button>
@@ -80,4 +80,3 @@ class DND extends React.Component {
 }
 
 ReactDOM.render(<DND />, document.getElementById('root'));
-//<input type="text" id="search" />
