@@ -5,9 +5,17 @@
     padding: 0;
 }
 
+h1
+{
+    /*color: whitesmoke;*/
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
 body
 {
-    background-color: darkgray;
+    background-color: whitesmoke;
     margin-top: 15px;
     font-size: 20px;
     text-align: center;
@@ -23,14 +31,15 @@ button
 
 #root
 {
+    background-color: darkgray;
     margin: 0;
     text-align: justify;
     border: 1px solid black;
     box-sizing: border-box;
     margin-top: 3%;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
     height: 50%;
     -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 4s; /* Firefox < 16 */
